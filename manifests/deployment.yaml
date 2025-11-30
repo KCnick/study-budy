@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: llmops-app
-        image: nixonchebii/studybudy:v306
+        image: nixonchebii/studybudy:v307
         ports:
         - containerPort: 8501
         env:
