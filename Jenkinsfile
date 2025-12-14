@@ -43,13 +43,13 @@ pipeline {
         stage('Commit Updated YAML') {
             steps {
                 script {
-                    withCredentials([usernamePassword(credentialsId: 'github-token', usernameVariable: 'GIT_USER', passwordVariable: 'GIT_TOKEN')]) {
+                    withCredentials([usernamePassword(credentialsId: 'github-token', usernameVariable: 'GIT_USER', passwordVariable: 'GIT_PASS')]) {
                         sh '''
                         git config user.name "KCnick"
                         git config user.email "nicchebii@gmail.com"
                         git add manifests/deployment.yaml
                         git commit -m "Update image tag to ${IMAGE_TAG}" || echo "No changes to commit"
-                        git push https://${GIT_USER}:${GIT_TOKEN}@github.com/KCnick/study-budy.git HEAD:main
+                        git push https://${GIT_USER}:${GIT_PASS}@github.com/KCnick/study-budy.git HEAD:main
                         '''
                     }
                 }
