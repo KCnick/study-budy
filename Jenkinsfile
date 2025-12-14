@@ -76,7 +76,7 @@ pipeline {
                         argocd app sync studybuddy
                         '''
                     }
-                }c
+                }
             }
         }
     }
